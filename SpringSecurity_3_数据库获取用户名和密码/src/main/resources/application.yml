@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+# MyBatis-Plus相关配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 配置日志
+  # 全局配置
+  global-config:
+    db-config:
+      table-prefix: t_  # 设置所有表的通用前缀名称为t_
+      id-type: auto  # 设置主键的生成策略（assign_id雪花算法，auto自增）
+      logic-delete-field: delFlag # 全局逻辑删除的实体字段名
+      logic-delete-value: 1  # 代表已删除
+      logic-not-delete-value: 0 # 代表未删除
+
